@@ -8,11 +8,10 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "message")
-public class Message {
+@Table(name = "expired_message")
+public class ExpiredMessage {
 
     @Id
-    @GeneratedValue
     private int id;
 
     @OneToOne(optional = true)
@@ -21,16 +20,6 @@ public class Message {
 
     private String text;
     private Date expirationDate;
-
-
-    public ExpiredMessage expire() {
-        ExpiredMessage msg = new ExpiredMessage();
-        msg.setId(id);
-        msg.setUser(user);
-        msg.setText(text);
-        msg.setExpirationDate(expirationDate);
-        return msg;
-    }
 
     //////////////////////////////////
     //////////////////////////////////

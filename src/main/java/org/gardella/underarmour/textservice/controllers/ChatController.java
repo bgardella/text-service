@@ -73,6 +73,7 @@ public class ChatController extends BaseController{
         JSONObject jobj = new JSONObject();
         jobj.put("id", message.getId());
 
+        resp.setStatus(HttpServletResponse.SC_CREATED);
         returnJsonSuccess(jobj, resp);
     }
 
