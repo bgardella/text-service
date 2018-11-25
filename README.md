@@ -14,11 +14,11 @@ A simple ephemeral text message service
     $ mvn test    
     
 ### Why did I do it this way?
-I work mostly in spring-boot lately.  It is definitely verbose but I'm used to 
-that.  The advantage, for me, is that I know I can scale it pretty much as is.
+I work mostly in spring-boot these days.  It is definitely verbose but I'm used to 
+that.  The advantage for me, is that I know I can scale it pretty much as is.
 I didn't bother doing anything fancy with the datastorage. By using an H2
 in-memory database, you can test and run after one simple git pull. Also makes
-swapping out to any RDS a one line config change in the `applcation.properties`
+swapping out to any RDS a one-line config change in the `applcation.properties`
 file.
 
 ### The limitations
@@ -28,10 +28,10 @@ running at 15 second intervals.
 
 ### What would be super cool
 Having the scheduled sweeper run on the same REST microservice isn't really 
-a good idea.  I would separate the sweeper into it's own clustered service and 
+a good idea.  I would separate the sweeper into its own clustered service and 
 tune the thread pools so that we could sweep multiple times a second.  I'd 
 also consider moving the "cold storage" messages into a separate data store
-rather than a simple table.
+rather than just another table in the same datastore.
 
 ### How would you scale?
 Configure the service to run as an AWS Beanstalk service and begin tuning 
